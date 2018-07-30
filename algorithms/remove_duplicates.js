@@ -1,20 +1,24 @@
 'use strict';
 
 let arr = [];
+
+// Generate some random numbers
 for (let i = 0; i < 30; i++) {
-    arr.push(Math.round(Math.random() * 5) + 1);
+    arr.push(Math.floor(Math.random() * 5) + 1);
 }
 
 console.log("Before removing duplicates:");
 console.log(arr);
 
-console.log("After removing duplicates:");
+// The algorithm
 let arr2 = [];
 arr.map(el1 => {
     if (!arr2.some(el2 => el1 === el2)) {
         arr2.push(el1);
     }
 });
+
+console.log("After removing duplicates:");
 console.log(arr2);
 
 // Mark for garbage collection
