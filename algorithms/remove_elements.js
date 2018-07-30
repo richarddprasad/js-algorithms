@@ -1,12 +1,13 @@
 'use strict';
 
-function randomNumbers(count, high, low) {
-    let rv = [];
-    for(let i = 0; i < count; i++) {
-        rv.push(Math.floor(Math.random() * (high-low + 1) + low));
-    }
-    return rv;
-}
+const { randomNumbers, removeDuplicates, sortAscending } = require('./helpers.js');
+const MIN = 7;
+const MAX = 12;
 
-let test1 = randomNumbers(10, 9, 2);
-console.log(test1);
+let arr = sortAscending(removeDuplicates(randomNumbers(20, MIN, MAX)));
+console.log("Array contents: ");
+console.log(arr);
+
+let toRemove = sortAscending(removeDuplicates(randomNumbers(5, MIN, MAX)));
+console.log("Will remove: ");
+console.log(toRemove);
