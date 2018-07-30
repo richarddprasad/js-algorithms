@@ -6,6 +6,7 @@
 
 'use strict';
 
+// TODO: Add proper annotations and comments to functions
 // TODO: Convert to ES6-style exports
 
 // Returns an array of "count" random numbers, range [low, high]
@@ -33,4 +34,15 @@ module.exports.sortAscending = arr => {
     let rv = [];
     arr.map(el => rv.push(el));
     return rv.sort((a, b) => a - b);
+}
+
+// Returns an array with elements from a2 filtered out of a1
+module.exports.removeElements = (a1, a2) => {
+    let rv = [];
+    a1.map(el1 => {
+        if(!a2.some(el2 => el1 === el2)) {
+            rv.push(el1);
+        }
+    });
+    return rv;
 }
