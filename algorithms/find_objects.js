@@ -1,5 +1,7 @@
 'use strict';
 
+const { findObjects: findObjExt } = require('./helpers.js');
+
 // const collection = [{ first: "Romeo", last: "Montague" },
 // { first: "Mercutio", last: null },
 // { first: "Tybalt", last: "Capulet" }
@@ -26,7 +28,7 @@ function findObjects(a1, a2) {
         // Are all the key-value pairs in a2 present in a1?
         let present = true;
         a2Keys.forEach(key2 => {
-            if(obj[key2] !== a2[key2]) {
+            if (obj[key2] !== a2[key2]) {
                 present = false;
             }
         });
@@ -42,19 +44,10 @@ function findObjects(a1, a2) {
 
 console.log(findObjects(collection, target));
 
-        // Iterate over each key from each object
-        // return (
-        //     Object.keys(obj).some(key => {
+console.log("\nTesting externally...");
+console.log("Expecting: [{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\":2 }]");
+const a1Test2 = [{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }];
+const a2Test2 = { "apple": 1, "bat": 2 };
 
-        //         console.log("****************");
-        //         console.log("key: " + key + ", value: " + obj[key]);
-
-        //         console.log(key === a2Key);
-        //         return key === a2Key && obj[key] === a2Value;
-        //     }));
-
-        // let accept;
-        // accept = Object.keys(obj).reduce((accept, key) => {
-        //     return a2Keys.some(key2 => key === key2 && obj[key] === a2[key2]);
-        // }, false);
-        // return accept;
+console.log("Final results: ");
+console.log(findObjExt(a1Test2, a2Test2));
