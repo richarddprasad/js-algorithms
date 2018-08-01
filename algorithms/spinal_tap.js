@@ -1,6 +1,7 @@
 'use strict';
 
-// TODO: Rewrite, this is not practical using array helper methods
+// TODO: Rewrite, this is not practical using array helper methods;
+//  use regex instead
 
 const tests = [
     "This Is Spinal Tap",
@@ -11,27 +12,9 @@ const tests = [
 ];
 
 function spinalCase(str) {
+    // TODO: Use regex to do the split
     let s = str.split("");
-    // First change an initial uppercase letter to lowercase
-    if (isUpperCase(s[0])) {
-        s[0] = s[0].toLowerCase();
-    }
-   
-    return s.map(c => {
-        
-        // Is the character an uppercase letter?
-        if (isUpperCase(c)) {
-            c = String.fromCharCode(c.charCodeAt(0) + 32);
-        }
-   
-        // Is the character a space?
-        if(c === ' ') {
-            c = '-';
-        }
-
-        return c;
-
-    }).filter(c => c !== ' ' && c !== '_').join("");
+    
 }
 
 function isUpperCase(c) {
