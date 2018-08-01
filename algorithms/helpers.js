@@ -67,3 +67,31 @@ module.exports.findObjects = (a1, a2) => {
 
     return rv;
 }
+
+// An algorithm that replaces a given word in a string
+// with another, preserving the case of the original
+// Note: This algorithm only takes into account the case in which
+// the "before" word starts with an uppercase letter and the "after"
+// word is assumed to start with a lowercase letter
+// TODO: Take into account "before" being lowercase and 
+//  "after" starting with uppercase (needing to be changed to lowercase)
+module.exports.searchAndReplace = function(str, before, after) {
+    // First, change the replacement word ("after")
+    // to match the case of the original ("before")
+    let temp;
+    if (isUppercase(before.charCodeAt(0))) {
+        temp = (String.fromCharCode(after.charCodeAt(0) - 32)).concat(after.slice(1));
+    } else {
+        temp = after;
+    }
+    //console.log(before, temp);
+
+    return str.replace(before, temp);
+}
+
+// 65 = 'A', 90 = 'Z'
+function isUppercase(c) {
+    return c >= 65 && c <= 90;
+}
+
+module.exports.isUppercase = isUppercase;

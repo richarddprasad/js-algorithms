@@ -3,6 +3,8 @@
 
 'use strict';
 
+const { searchAndReplace : sr, isUppercase : iu } = require('./helpers.js');
+
 const tests = [
     ["Let us go to the store", "store", "mall"],
     ["He is Sleeping on the couch", "Sleeping", "sitting"],
@@ -31,4 +33,9 @@ function isUppercase(c) {
 
 tests.forEach(el => {
     console.log(searchAndReplace(el[0], el[1], el[2]));
+});
+
+console.log("\nTesting from library...");
+tests.forEach(el => {
+    console.log(sr(el[0], el[1], el[2]));
 });
