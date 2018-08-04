@@ -12,7 +12,7 @@ console.log(arr);
 
 // The algorithm
 let arr2 = [];
-arr.map(el1 => {
+arr.forEach(el1 => {
     if (!arr2.some(el2 => el1 === el2)) {
         arr2.push(el1);
     }

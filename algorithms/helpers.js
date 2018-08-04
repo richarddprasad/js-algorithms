@@ -21,7 +21,7 @@ module.exports.randomNumbers = (count, low, high) => {
 // Returns an array with all duplicates removed
 module.exports.removeDuplicates = arr => {
     let arr2 = [];
-    arr.map(el1 => {
+    arr.forEach(el1 => {
         if (!arr2.some(el2 => el1 === el2)) {
             arr2.push(el1);
         }
@@ -32,14 +32,14 @@ module.exports.removeDuplicates = arr => {
 // Returns a sorted array
 module.exports.sortAscending = arr => {
     let rv = [];
-    arr.map(el => rv.push(el));
+    arr.forEach(el => rv.push(el));
     return rv.sort((a, b) => a - b);
 }
 
 // Returns an array with elements from a2 filtered out of a1
 module.exports.removeElements = (a1, a2) => {
     let rv = [];
-    a1.map(el1 => {
+    a1.forEach(el1 => {
         if(!a2.some(el2 => el1 === el2)) {
             rv.push(el1);
         }

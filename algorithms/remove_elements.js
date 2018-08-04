@@ -20,7 +20,7 @@ console.log(toRemove);
 // POST: A new array with elements from a1 matching elements in a2 removed
 function removeElements(a1, a2) {
     let rv = [];
-    a1.map(el1 => {
+    a1.forEach(el1 => {
         if(!a2.some(el2 => el1 === el2)) {
             rv.push(el1);
         }
