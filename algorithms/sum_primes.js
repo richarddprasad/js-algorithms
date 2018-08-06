@@ -1,6 +1,4 @@
-// Returns the sum of all prime number up to and including num
-
-// TODO: Massive code cleanup and add comments
+// Returns the sum of all prime numbers up to and including num
 
 function sumPrimes(num) {
   let primes = new Array(num + 1);
