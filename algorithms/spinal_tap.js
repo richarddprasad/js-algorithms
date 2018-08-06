@@ -1,8 +1,5 @@
 'use strict';
 
-// TODO: Rewrite, this is not practical using array helper methods;
-//  use regex instead
-
 const tests = [
     "This Is Spinal Tap",
     "thisIsSpinalTap",
