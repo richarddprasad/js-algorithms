@@ -1,3 +1,5 @@
+// Nonfunctional; solution is telephone_validator2.js
+
 function telephoneCheck(str) {
     let regex = /[0-9]+/g;
     let s = str.match(regex);
