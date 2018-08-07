@@ -37,7 +37,7 @@ function convertToRoman(num) {
             rv.push('XL');
             num -= 40;
             continue;
-        } else if(num > 10) {
+        } else if(num >= 10) {
             rv.push('X');
             num -= 10;
             continue;
@@ -92,3 +92,4 @@ convertToRoman(1006); //should return "MVI"
 convertToRoman(1023); //should return "MXXIII"
 convertToRoman(2014); //should return "MMXIV"
 convertToRoman(3999); //should return "MMMCMXCIX"
+convertToRoman(10);
