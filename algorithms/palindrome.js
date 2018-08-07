@@ -2,7 +2,7 @@
 
 function palindrome(str) {
     // Remove non-alphanumeric characters
-    let regex = /[a-z0-9]+/ig;
+    const regex = /[a-z0-9]+/ig;
     let s = (str.match(regex)).join("");
     
     // Convert string to lowercase

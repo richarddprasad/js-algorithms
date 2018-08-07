@@ -138,34 +138,12 @@ function pullChange(cid, change, userChange) {
             console.log("cid Update: ")
             console.log(cid);
         }
-
-        // // While the change due is greater than the current denomination
-        // while(change >= cid[i][1]) {
-        //     // Remove currency of that denomination from the drawer
-        //     if(!userChange[i]) {
-        //         userChange.push([cid[i][0], 0.0]);
-        //     }
-        //     userChange[i][1] += cid[i][1];
-        //     cid[i][1] -= 1;
-        //     change -= 1;
-        // }
     }
 
     console.log("FINAL CHANGE VALUE: ", (Math.round(change * 100) / 100));
 
     return change === 0 ? STATES.open : STATES.insufficient;
 }
-
-// Example cash-in-drawer array:
-// [["PENNY", 1.01],
-// ["NICKEL", 2.05],
-// ["DIME", 3.1],
-// ["QUARTER", 4.25],
-// ["ONE", 90],
-// ["FIVE", 55],
-// ["TEN", 20],
-// ["TWENTY", 60],
-// ["ONE HUNDRED", 100]]
 
 checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
 checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]); //should return {status: "OPEN", change: [["QUARTER", 0.5]]}.
