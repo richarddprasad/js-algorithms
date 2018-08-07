@@ -2,6 +2,8 @@
 // the amount in the drawer are equal; rewriting the code to account for it correctly would
 // be too time consuming
 
+// TODO: Maybe rewrite a more elegant solution...
+
 function checkCashRegister(price, cash, cid) {
     const DRAWER = {
         PENNY: 0,
@@ -88,6 +90,8 @@ function checkCashRegister(price, cash, cid) {
             if (change < 0) {
                 console.log("CHANGE VALUE BELOW 0.01: ", change);
                 change = 0;
+            } else if(change > 0 && change < 0.01) {
+                change = Math.round(change * 100) / 100;
             }
         } else {
             state = STATES.insufficient;
@@ -99,7 +103,7 @@ function checkCashRegister(price, cash, cid) {
     }
 
     if (state === STATES.insufficient) {
-        if (change < 0.01) {
+        if (change <= 0.01) {
             state = STATES.closed;
             // Don't feel like rewriting the code
             // to deal with the case in which the
@@ -108,6 +112,7 @@ function checkCashRegister(price, cash, cid) {
             // HOTFIX
             userChange = cid;
             userChange[DRAWER.PENNY][1] = 0.5;
+            //userChange[DRAWER.PENNY][1] = Math.round(userChange[DRAWER.PENNY][1] * 100) / 100;
         } else {
             userChange = [];
         }
