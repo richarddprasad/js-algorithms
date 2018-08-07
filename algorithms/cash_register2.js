@@ -121,7 +121,7 @@ function pullChange(cid, change, userChange) {
     for (let i = 0; i < cid.length; i++) {
         //console.log(cid[i][0], cid[i][1]);
 
-        // If the denomination value is greater than the denomination value,
+        // If the amount in the drawer for the denomination is greater than the denomination value,
         // and the change amount is greater than the given
         // denomination...
         while (cid[i][1] >= VALUES[i][1] && change >= VALUES[i][1]) {
