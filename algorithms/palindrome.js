@@ -1,7 +1,6 @@
 // Tests whether or not a given string is a palindrome
 
 function palindrome(str) {
-  
     // Remove non-alphanumeric characters
     let regex = /[a-z0-9]+/ig;
     let s = (str.match(regex)).join("");
@@ -16,8 +15,8 @@ function palindrome(str) {
         break;
       }
     }
-    console.log("\nOriginal string: " + str);
-    console.log("\"" + s + "\"" + " is a palindrome? " + isPalindrome);
+    // console.log("\nOriginal string: " + str);
+    // console.log("\"" + s + "\"" + " is a palindrome? " + isPalindrome);
   
     return isPalindrome;
   }
