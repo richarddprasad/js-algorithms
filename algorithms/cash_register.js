@@ -1,3 +1,5 @@
+// UPDATE: Reimplemented in cash_register2.js
+
 // This code does not appropriately handle the case where the change to be given and
 // the amount in the drawer are equal; rewriting the code to account for it correctly would
 // be too time consuming
