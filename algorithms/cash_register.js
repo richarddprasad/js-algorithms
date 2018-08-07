@@ -17,7 +17,7 @@ function checkCashRegister(price, cash, cid) {
         closed: "CLOSED"
     };
 
-    let userChange = {};
+    let userChange = [];
 
     let state = STATES.open;
     // console.log("Drawer State: ", state);
@@ -61,6 +61,11 @@ function checkCashRegister(price, cash, cid) {
             change -= 1;
             continue;
         } else if(change >= 0.25 && cid[DRAWER.QUARTER][1] >= 0.25) {
+            if(!userChange["QUARTER"]) {
+                userChange["QUARTER"] = "QUARTER";
+                userChange["QUARTER"][1] = 0.0;
+            }
+            userChange["QUARTER"][1] += 0.25;
             cid[DRAWER.QUARTER][1] -= 0.25;
             change -= 0.25;
             continue;
@@ -76,6 +81,7 @@ function checkCashRegister(price, cash, cid) {
             cid[DRAWER.PENNY][1] -= 0.01;
             change -= 0.01;
         } else {
+            state = STATES.insufficient;
             console.log("CANNOT MAKE CHANGE");
             break;
         }
@@ -92,7 +98,8 @@ function checkCashRegister(price, cash, cid) {
 
     console.log("Change is now: ", change);
     console.log("Drawer is now: ", cid);
-
+    console.log("State: ", state);
+    console.log("User Change: ", userChange)
     console.log("*********************");
     
 
