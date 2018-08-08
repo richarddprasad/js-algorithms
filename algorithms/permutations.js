@@ -1,3 +1,6 @@
+// This solution doesn't work; must use Heap's algorithm.
+// See permutations2.js
+
 function permAlone(str) {
     let characters = str.split("");
     let strings = [];
@@ -11,19 +14,45 @@ function permAlone(str) {
     //     generateString(el1, temp);
     // });
 
+
+
     // console.log(characters[0]);
-    let rv = generateString(0, characters[0]);
-    console.log("return value: ", rv);
+    // let rv = generateString(0, characters[0]);
+    // console.log("return value: ", rv);
+
+    // Generate a set of arrays to feed into the recursive function
+    // The first item is the chosen character, the rest are the remaining
+    // characters
+    let tests = [];
+    let temp = [];
+    for(let i = 0; i < characters.length; i++) {
+        temp.push(characters[i]);
+
+        for(let j = 0; j < characters.length; j++) {
+            if(j !== i) {
+                temp.push(characters[j]);
+            }
+        }
+        tests.push(temp);
+        temp = [];
+    }
+    temp = null;
+    console.log(tests);
+
+    tests.forEach(arr => {
+        strings.push(generateString(0, arr[0]));
+    });
+    console.log("Generated Strings: ", strings);
 
     function generateString(index, current) {
         // Base Case
         if(index === MAX_INDEX) {
-            console.log("BASE CASE REACHED: ", current);
+            // console.log("BASE CASE REACHED: ", current);
             return current;
         }
 
         // General Case
-        console.log("GENERAL CASE: ", current);
+        // console.log("GENERAL CASE: ", current);
         current = characters[index+1];
         return current.concat(generateString(index+1, current));        
     }
