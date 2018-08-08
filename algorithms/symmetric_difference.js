@@ -23,7 +23,7 @@ function sym(args) {
         console.log("temp2: ");
         console.log(temp2);
 
-        // Merged retained values
+        // Merge retained values
         rv = temp1.concat(temp2);
         console.log("rv current state: ");
         console.log(rv);
