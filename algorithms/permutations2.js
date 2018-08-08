@@ -42,10 +42,33 @@ function permAlone(str) {
     generate(characters.length);
     console.log("strings: ", strings);
 
-    return str;
+    // Step 2: Remove duplicates
+    // NEVERMIND, not part of the test requirements
+    // let filteredStrings = [];
+    // strings.forEach(s1 => {
+    //     if(!filteredStrings.some(s2 => s1 === s2)) {
+    //         filteredStrings.push(s1);
+    //     }
+    // });
+    // console.log("Filtered Strings: ", filteredStrings);
+
+    // Step 3: Remove strings with repeating characters
+    // indexOf() might be helpful here... just kidding
+    // Note: The given solution uses regex
+    strings = strings.filter(s => {
+        for(let i = 0, j = 1; j < s.length; i++, j++) {
+            if(s[i] === s[j]) {
+                return false;
+            } 
+        }
+        return true;
+    });
+    console.log("Final Result: ", strings);
+
+    return strings.length;
 }
 
-permAlone("aab"); //should return 2.
+console.log(permAlone("aab")); //should return 2.
 // permAlone("aaa"); //should return 0.
 // permAlone("aabb"); //should return 8.
 // permAlone("abcdefa"); //should return 3600.
