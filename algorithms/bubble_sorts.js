@@ -1,4 +1,6 @@
 // A series of Bubble Sort algorithms
+// TODO: Implement enhanced bubble sort algorithms, e.g., shaker sort
+// TODO: Test new functions
 
 // Helper function
 function swap(a, b, arr) {
