@@ -5,7 +5,7 @@ function swap(a, b, arr) {
     let t = arr[a];
     arr[a] = arr[b];
     arr[b] = t;
-    delete t;
+    // delete t; PRIMITIVE VALUE!
 }
 
 // Returns a sorted copy of the array
