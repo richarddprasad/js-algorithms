@@ -104,4 +104,15 @@ function digital_root(n) {
 
 /********************************************************/
 
+// Credit Card Mask
+function maskify(str) {
+  let len = str.length - 4 > 0 ? str.length - 4 : 0;
+  return '#'.repeat(len).concat(str.slice(len));
+}
+
+// The most clever solution
+function maskify(cc) {
+  return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+}
+
 /********************************************************/
