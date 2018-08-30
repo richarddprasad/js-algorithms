@@ -118,7 +118,24 @@ function maskify(cc) {
 /********************************************************/
 
 // Equal Sides Of An Array
-
+function findEvenIndex(arr)
+{
+  let leftSum = arr[0];
+  let pivot = 1;
+  let rightSum = 0;
+  
+  for(let i = pivot + 1; i < arr.length; i++) {
+    rightSum += arr[i];
+  }
+  
+  while(leftSum !== rightSum && pivot < arr.length) {
+    leftSum += arr[pivot];
+    ++pivot;
+    rightSum -= arr[pivot];
+  }
+  
+  return pivot < arr.length ? pivot : -1;
+}
 
 
 /********************************************************/
