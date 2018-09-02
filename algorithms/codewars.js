@@ -139,6 +139,39 @@ function findEvenIndex(arr)
 
 
 /********************************************************/
+
+function square_sums_row(n) {
+  console.log(n);
+  
+  let wentLeft = false;
+  let nums = new Array(n + 1);
+  
+  for(let i = 1; i < nums.length; i++) {
+    nums[i] = true;
+  }
+  
+  let rv = [];
+  let pivot = Math.floor(nums.length / 2) - 4;
+  let pivotMax = pivot + 6;
+  let index = 0;
+  
+  while(rv.length < n && pivot <= pivotMax) {
+    console.log("Pivot: ", pivot);
+    
+    if(!leftWent) {
+      for(let i = 1; i < pivot; i++) {
+        if(
+      }
+    } else {
+    
+    }
+    
+    
+    pivot++;
+  }
+}
+
+
 /********************************************************/
 /********************************************************/
 /********************************************************/
